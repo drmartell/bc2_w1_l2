@@ -44,13 +44,7 @@ export class App extends Component {
 
         const filterImages = new FilterImages({
             images: images,
-            // WILL POTENTIALLY NEED TO REMOVE THESE PARAMETERS
-            onFilter: (keywordFilter, hornsFilter) => {
-                
-                keywordFilter = dom.querySelector('#keyword').value.toLowerCase();
-                hornsFilter = dom.querySelector('#horns').value;
-                console.log(keywordFilter);
-                console.log(hornsFilter);
+            onFilter: ({ keywordFilter, hornsFilter }) => { 
 
                 let filtered = null;
         
@@ -58,7 +52,8 @@ export class App extends Component {
                     filtered = images;
                 }
                 else {
-                    filtered = images.filter(image => (keywordFilter ? image.keyword === keywordFilter : true) &&
+                    filtered = images.filter(image =>
+                        (keywordFilter ? image.keyword === keywordFilter : true) &&
                         (hornsFilter > 0 ? image.horns >= hornsFilter : true));
                 }
 
@@ -71,7 +66,7 @@ export class App extends Component {
         <section id="options">
             <select id="keyword">
                 <option value="" selected>All Types</option>
-                <option value="Rhino">rhino</option>
+                <option value="Rhino">Rhino</option>
                 <option value="Unicorn">unicorn</option>
                 <option value="Unilego">unilego</option>
                 <option value="Triceratops">triceratops</option>

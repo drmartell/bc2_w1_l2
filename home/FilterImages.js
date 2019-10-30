@@ -6,11 +6,38 @@ export class FilterImages extends Component {
         const onFilter = this.props.onFilter;
 
         select.addEventListener('input', () => {
-            onFilter(select.value);
+            const keywordFilter = document.getElementById('keyword').value.toLowerCase();
+            const hornsFilter = document.getElementById('horns').value;
+            onFilter({ 
+                keywordFilter,
+                hornsFilter,
+            });
         });
     }
 
     renderHTML(htmlString) {
-        return htmlString;
+        const images = this.props.images;
+
+        const keywordArray = images.map(image => image.keyword);
+        const uniqueKeywordArray = [...new Set(keywordArray)];
+        const optionTags = uniqueKeywordArray.map(keyword => 
+            `<option value="${keyword}">${keyword[0].toUpperCase() + keyword.slice(1)}</option>`);
+        let optionsString = '';
+        optionTags.forEach(optionTag => optionsString += optionTag);
+        return `
+        <section id="options">
+                <select id="keyword">
+                <option value="" selected>All Types</option>
+                ${optionsString}
+                </select>
+                <select id="horns">
+                    <option value="" selected>All Horns</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </section>`;
+        //return htmlString;
     }
 }
