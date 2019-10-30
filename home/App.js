@@ -10,22 +10,22 @@ export class App extends Component {
     onRender(dom) { 
         const header = new Header(
             {
-                images: images,
-                onFilter: (keywordFilter, hornsFilter) => {
+                //images: images,
+                // onFilter: (keywordFilter, hornsFilter) => {
                 
-                    let filtered = null;
+                //     let filtered = null;
         
-                    if (!keywordFilter && !hornsFilter) {
-                        filtered = images;
-                    }
-                    else {
-                        filtered = images.filter(image => (keywordFilter ? image.keyword === keywordFilter : true) &&
-                        (hornsFilter > 0 ? image.horns >= hornsFilter : true));
-                    }
+                //     if (!keywordFilter && !hornsFilter) {
+                //         filtered = images;
+                //     }
+                //     else {
+                //         filtered = images.filter(image => (keywordFilter ? image.keyword === keywordFilter : true) &&
+                //         (hornsFilter > 0 ? image.horns >= hornsFilter : true));
+                //     }
 
-                    const updateProps = { images: filtered };
-                    imageList.update(updateProps);
-                }
+                //     const updateProps = { images: filtered };
+                //     imageList.update(updateProps);
+                // }
             }
         );
 
@@ -47,7 +47,7 @@ export class App extends Component {
             // WILL POTENTIALLY NEED TO REMOVE THESE PARAMETERS
             onFilter: (keywordFilter, hornsFilter) => {
                 
-                keywordFilter = dom.querySelector('#keyword').value;
+                keywordFilter = dom.querySelector('#keyword').value.toLowerCase();
                 hornsFilter = dom.querySelector('#horns').value;
                 console.log(keywordFilter);
                 console.log(hornsFilter);
@@ -92,8 +92,6 @@ export class App extends Component {
         </section>
     `);
 
-        // const optionsSection = dom.querySelector('.options-section');
-        // optionsSection.appendChild(filterImagesDOM);
         const headerTag = dom.getElementsByTagName('header')[0];
         headerTag.appendChild(filterImagesDOM);
 
