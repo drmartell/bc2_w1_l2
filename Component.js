@@ -1,6 +1,6 @@
-import htmlToDOM from './util/html-to-DOM.js';
+import { htmlToDOM } from './util/html-to-DOM.js';
 
-class Component {
+export class Component {
     constructor(props) {
         this.props = props || {};
         this.state = {};
@@ -46,5 +46,3 @@ class Component {
         oldRoot.replaceWith(newDOM);
     }
 }
-
-export default Component;
