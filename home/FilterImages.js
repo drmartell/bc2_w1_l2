@@ -15,7 +15,7 @@ export class FilterImages extends Component {
         });
     }
 
-    renderHTML(htmlString) {
+    renderHTML() {
         const images = this.props.images;
 
         const keywordArray = images.map(image => image.keyword);
@@ -38,6 +38,5 @@ export class FilterImages extends Component {
                     <option value="4">4</option>
                 </select>
             </section>`;
-        //return htmlString;
     }
 }

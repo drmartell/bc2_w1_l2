@@ -8,26 +8,7 @@ import { images } from '../data/images.js';
 export class App extends Component {
 
     onRender(dom) { 
-        const header = new Header(
-            {
-                //images: images,
-                // onFilter: (keywordFilter, hornsFilter) => {
-                
-                //     let filtered = null;
-        
-                //     if (!keywordFilter && !hornsFilter) {
-                //         filtered = images;
-                //     }
-                //     else {
-                //         filtered = images.filter(image => (keywordFilter ? image.keyword === keywordFilter : true) &&
-                //         (hornsFilter > 0 ? image.horns >= hornsFilter : true));
-                //     }
-
-                //     const updateProps = { images: filtered };
-                //     imageList.update(updateProps);
-                // }
-            }
-        );
+        const header = new Header();
 
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
@@ -62,30 +43,7 @@ export class App extends Component {
             }
         });
 
-        const filterImagesDOM = filterImages.renderDOM(`
-        <section id="options">
-            <select id="keyword">
-                <option value="" selected>All Types</option>
-                <option value="Rhino">Rhino</option>
-                <option value="Unicorn">unicorn</option>
-                <option value="Unilego">unilego</option>
-                <option value="Triceratops">triceratops</option>
-                <option value="Markhor">markhor</option>
-                <option value="Mouflon">mouflon</option>
-                <option value="Addax">addax</option>
-                <option value="Chameleon">chameleon</option>
-                <option value="Lizard">lizard</option>
-                <option value="Dragon">dragon</option>
-            </select>
-            <select id="horns">
-                <option value="" selected>All Horns</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-        </section>
-    `);
+        const filterImagesDOM = filterImages.renderDOM();
 
         const headerTag = dom.getElementsByTagName('header')[0];
         headerTag.appendChild(filterImagesDOM);
