@@ -10,8 +10,9 @@ export class Component {
         // no-op
     }
 
-    renderDOM() {
-        const html = this.renderHTML();
+    //renderDOM() {
+    renderDOM(htmlString) {
+        const html = this.renderHTML(htmlString);
         if (typeof(html) !== 'string') {
             throw new Error(`Component "${this.constructor.name}" needs to return an html string from renderHTML`);
         }

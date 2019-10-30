@@ -1,6 +1,15 @@
 import { Component } from '../Component.js';
 
 export class Header extends Component {
+
+    onRender(select) {
+        const onFilter = this.props.onFilter;
+
+        select.addEventListener('input', () => {
+            onFilter(select.value);
+        });
+    }
+    
     renderHTML() {
         return /*html*/`
             <header>

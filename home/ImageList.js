@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from '../Component.js';
 import { ImageItem } from './ImageItem.js';
 
 export class ImageList extends Component {

@@ -64,8 +64,7 @@ p {
 }
 
 footer {
-    display: grid;
-    justify-content: center;
     background-color: lightblue;
     padding: 25px;
+    text-align: center;
 }
