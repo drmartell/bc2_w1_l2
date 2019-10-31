@@ -4,6 +4,7 @@ import { Footer } from './Footer.js';
 import { ImageList } from './ImageList.js';
 import { FilterImages } from './FilterImages.js';
 import { images } from '../data/images.js';
+import { AddImage } from './AddImage.js';
 
 export class App extends Component {
 
@@ -14,7 +15,7 @@ export class App extends Component {
         dom.prepend(headerDOM);
 
         const props = {
-            images: images
+            images
         };
 
         const imageList = new ImageList(props);
@@ -48,6 +49,17 @@ export class App extends Component {
         const headerTag = dom.getElementsByTagName('header')[0];
         headerTag.appendChild(filterImagesDOM);
 
+        const addImageSection = dom.querySelector('.form-section');
+        const addImage = new AddImage({
+            images: images,
+            onAdd: newImage => {
+                images.push(newImage);
+                imageList.update(images);
+            }
+        });
+        const addImageDOM = addImage.renderDOM();
+        addImageSection.appendChild(addImageDOM);
+
         const footer = new Footer();
         const footerDOM = footer.renderDOM();
         dom.appendChild(footerDOM);
@@ -63,6 +75,9 @@ export class App extends Component {
                     </section>
                     <section class="list-section">
                         <!-- ImageList goes here -->
+                    </section>
+                    <section class="form-section">
+                        <!-- AddImage Form goes here -->
                     </section>
                 </main>
             </div>

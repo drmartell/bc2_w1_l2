@@ -25,7 +25,7 @@ export class FilterImages extends Component {
         let optionsString = '';
         optionTags.forEach(optionTag => optionsString += optionTag);
         return `
-        <section id="options">
+            <section id="options">
                 <select id="keyword">
                 <option value="" selected>All Types</option>
                 ${optionsString}
