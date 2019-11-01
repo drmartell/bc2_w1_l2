@@ -4,6 +4,11 @@ export class AddImage extends Component {
 
     onRender(form) {
         const { onAdd } = this.props;
+        // same as saying const onAdd = this.props.onAdd
+        // i.e. this is destructuring of the props object to send the
+        // value associated with the onAdd key into a local variable
+        // called onAdd so that we can call it here
+        // we need to do this in order to get it out of the object for use in this scope
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
