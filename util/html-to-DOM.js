@@ -1,4 +1,4 @@
-function htmlToDOM(html) {
+export function htmlToDOM(html) {
     const template = document.createElement('template');
     template.innerHTML = html;
     const content = template.content;
@@ -10,5 +10,3 @@ function htmlToDOM(html) {
     const firstElementChild = content.firstElementChild;
     return firstElementChild;
 }
-
-export default htmlToDOM;

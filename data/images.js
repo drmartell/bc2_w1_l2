@@ -1,4 +1,4 @@
-const images = [
+export const images = [
     {
         url: 'http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg',
         title: 'UniWhal',
@@ -91,14 +91,14 @@ const images = [
         horns: 2
     },
     {
-        url: 'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/28476658_9c97f35096_o.jpg',
+        url: 'https://cdn.pixabay.com/photo/2019/09/29/08/24/mouflon-4512589_960_720.jpg',
         title: 'Mouflon',
         description: 'Those horns though',
         keyword: 'mouflon',
         horns: 2
     },
     {
-        url: 'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/addax.jpg',
+        url: 'https://storage.needpix.com/rsynced_images/addax-1505721_1280.jpg',
         title: 'Addax',
         description: 'This guy is basically extinct but survives well in captivity, so they\'re frequently found in zoos',
         keyword: 'addax',
@@ -112,7 +112,7 @@ const images = [
         horns: 2
     },
     {
-        url: 'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/chameleon.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Bale_two-horned_chameleon_%28Trioceros_balebicornutus%29.jpg',
         title: 'Happy Jackson\'s Chameleon',
         description: 'These are really common in Hawaii',
         keyword: 'chameleon',
@@ -140,5 +140,3 @@ const images = [
         horns: 100
     }
 ];
-
-export default images;
